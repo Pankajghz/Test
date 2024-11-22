@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sum Calculator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background: linear-gradient(to right, #6a11cb, #2575fc);
+      color: #fff;
+    }
+    .container {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      width: 300px;
+    }
+    input {
+      width: 90%;
+      padding: 10px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+    button {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      background-color: #4caf50;
+      color: white;
+      font-size: 18px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Sum Calculator</h1>
+    <input id="a" type="number" placeholder="Enter first number">
+    <input id="b" type="number" placeholder="Enter second number">
+    <button onclick="sendRequest()">Calculate Sum</button>
+    <p id="result" style="margin-top: 20px; font-size: 18px;"></p>
+  </div>
+  
+  <script>
+    function sendRequest() {
+      const a = parseFloat(document.getElementById("a").value);
+      const b = parseFloat(document.getElementById("b").value);
+
+      if (isNaN(a) || isNaN(b)) {
+        document.getElementById("result").textContent = "Please enter valid numbers.";
+        return;
+      }
+
+      // Simulate the server response
+      const result = a + b;
+      document.getElementById("result").textContent = `Sum: ${result}`;
+    }
+  </script>
+</body>
+</html>
